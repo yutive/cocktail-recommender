@@ -10,7 +10,6 @@ export default async function Home() {
     const res2 = await data2.json()
 
 
-
     // res.drinks[0].strDrinkThumb
     // res.drinks[0].strAlcoholic
     // res.drinks[0].strInstructionsDE
@@ -19,45 +18,42 @@ export default async function Home() {
 
     return (
         <main>
-            <div className="flex flex-col lg:flex-row items-center justify-center lg:h-screen">
+            <div className="flex flex-col lg:flex-row items-center justify-center lg:mt-20">
                 <Link href={`/${res.drinks[0].idDrink}`}>
-                    <div className="rounded-2xl shadow-lg bg-neutral-700 m-10 mt-28 lg:mt-10 hover:shadow-2xl">
-                        <img className="h-1/3 w-full rounded-2xl object-cover" src={res.drinks[0].strDrinkThumb}
-                             alt="Mountain"/>
+                    <div className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105 duration-300 rounded-2xl shadow-lg bg-neutral-700 m-10 mt-28 lg:mt-10 hover:shadow-2xl">
+                        <img className="rounded-2xl object-cover" alt="Cocktail" src={res.drinks[0].strDrinkThumb}/>
                         <div className="p-8">
-                            <div
-                                className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{res.drinks[0].strAlcoholic}
+                            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+                                {res.drinks[0].strAlcoholic}
                             </div>
-                            <p
-                               className="text-xl mt-1 font-medium leading-tight text-white hover:underline">{res.drinks[0].strDrink}
+                            <p className="text-xl mt-1 font-medium leading-tight text-white">
+                                {res.drinks[0].strDrink}
                             </p>
                         </div>
                     </div>
                 </Link>
                 <Link href={`/${res1.drinks[0].idDrink}`}>
-                    <div className="rounded-2xl shadow-lg bg-neutral-700 m-10 mt-10 hover:shadow-2xl">
-                        <img className="h-1/3 w-full rounded-2xl object-cover" src={res1.drinks[0].strDrinkThumb}
-                             alt="Mountain"/>
+                    <div className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105 duration-300 rounded-2xl shadow-lg bg-neutral-700 m-10 hover:shadow-2xl">
+                        <img className="rounded-2xl object-cover" alt="Cocktail" src={res1.drinks[0].strDrinkThumb}/>
                         <div className="p-8">
-                            <div
-                                className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{res1.drinks[0].strAlcoholic}
+                            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+                                {res1.drinks[0].strAlcoholic}
                             </div>
-                            <p
-                               className="text-xl mt-1 font-medium leading-tight text-white hover:underline">{res1.drinks[0].strDrink}
+                            <p className="text-xl mt-1 font-medium leading-tight text-white">
+                                {res1.drinks[0].strDrink}
                             </p>
                         </div>
                     </div>
                 </Link>
                 <Link href={`/${res2.drinks[0].idDrink}`}>
-                    <div className="rounded-2xl shadow-lg bg-neutral-700 m-10 mt-10 hover:shadow-2xl">
-                        <img className="h-1/3 w-full rounded-2xl object-cover" src={res2.drinks[0].strDrinkThumb}
-                             alt="Mountain"/>
+                    <div className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105 duration-300 rounded-2xl shadow-lg bg-neutral-700 m-10 hover:shadow-2xl">
+                        <img className="rounded-2xl object-cover" alt="Cocktail" src={res2.drinks[0].strDrinkThumb}/>
                         <div className="p-8">
-                            <div
-                                className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{res2.drinks[0].strAlcoholic}
+                            <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+                                {res2.drinks[0].strAlcoholic}
                             </div>
-                            <p
-                               className="text-xl mt-1 font-medium leading-tight text-white hover:underline">{res2.drinks[0].strDrink}
+                            <p className="text-xl mt-1 font-medium leading-tight text-white">
+                                {res2.drinks[0].strDrink}
                             </p>
                         </div>
                     </div>
