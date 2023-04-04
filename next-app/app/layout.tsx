@@ -12,7 +12,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <body className="min-h-screen bg-gray-700">
             <div className="flex items-center justify-center relative">
                 <div
-                    className="flex items-center fixed mt-28 justify-between flex-wrap bg-slate-500 bg-opacity-95 rounded-lg w-3/4 h-14 pl-4 pr-4">
+                    className="flex items-center fixed z-50 mt-28 justify-between flex-wrap bg-slate-500 bg-opacity-95 rounded-lg w-3/4 h-14 pl-4 pr-4">
                     <Link className="text-white mr-auto font-bold text-2xl p-1 pl-2 pr-2 hover:bg-slate-600 rounded-xl transition ease-in-out delay-75 " href="/">
                         Random-Cocktail
                     </Link>
