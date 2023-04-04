@@ -13,7 +13,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             <div className="flex items-center justify-center relative">
                 <div
                     className="flex items-center fixed mt-28 justify-between flex-wrap bg-slate-500 bg-opacity-95 rounded-lg w-3/4 h-14 pl-4 pr-4">
-                    <Link className="text-white mr-6 font-bold text-2xl" href="/">
+                    <Link className="text-white mr-auto font-bold text-2xl" href="/">
                         Random-Cocktail
                     </Link>
                     <Link href="/history">
