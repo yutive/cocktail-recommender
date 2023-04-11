@@ -6,22 +6,22 @@ export default async function DrinkDetail({params}:{params:any}){
 
     return(
         <main>
-            <div className="flex flex-col lg:flex-row items-center justify-center">
-                    <div className=" rounded-2xl  shadow-lg bg-neutral-700 m-10 mt-28">
-                        <img className=" rounded-2xl object-cover" src={res.drinks[0].strDrinkThumb}
-                             alt="Mountain"/>
-                        <div className="p-8">
-                            <div
-                                className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{res.drinks[0].strAlcoholic}
-                            </div>
-                            <p
-                                className="text-xl font-medium leading-tight text-white">{res.drinks[0].strDrink}
-                            </p>
-                            <p
-                                className="text-lg mt-3 font-medium leading-tight text-white">{res.drinks[0].strInstructionsDE}
-                            </p>
-                        </div>
+            <div className="flex flex-row place-content-evenly rounded-2xl shadow-lg bg-neutral-700 m-10 mt-28">
+                <div className="place-content-start">
+                    <img className="object-cover rounded-2xl object-cover" src={res.drinks[0].strDrinkThumb}
+                         alt="Mountain"/>
+                </div>
+                <div className="p-8">
+                    <p className="text-xl font-medium leading-tight text-white">
+                        {res.drinks[0].strDrink}
+                    </p>
+                    <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+                        {res.drinks[0].strAlcoholic}
                     </div>
+                    <p className="text-lg mt-3 font-medium leading-tight text-white break-normal">
+                        {res.drinks[0].strInstructionsDE}
+                    </p>
+                </div>
             </div>
 
         </main>
