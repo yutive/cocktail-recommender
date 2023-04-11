@@ -20,7 +20,8 @@ export default async function Home() {
         <main>
             <div className="flex flex-col lg:flex-row items-center justify-center lg:mt-20">
                 <Link href={`/${res.drinks[0].idDrink}`}>
-                    <div className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105 duration-300 rounded-2xl shadow-lg bg-neutral-700 m-10 mt-28 lg:mt-10 hover:shadow-2xl">
+                    <div
+                        className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105 duration-300 max-w-md mx-auto lg:mx-10 overflow-hidden md:max-w-2xl rounded-2xl shadow-lg bg-neutral-700 m-10 mt-28 lg:mt-10 hover:shadow-2xl">
                         <img className="rounded-2xl object-cover" alt="Cocktail" src={res.drinks[0].strDrinkThumb}/>
                         <div className="p-8">
                             <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
@@ -33,7 +34,8 @@ export default async function Home() {
                     </div>
                 </Link>
                 <Link href={`/${res1.drinks[0].idDrink}`}>
-                    <div className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105 duration-300 rounded-2xl shadow-lg bg-neutral-700 m-10 hover:shadow-2xl">
+                    <div
+                        className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105 duration-300 max-w-md mx-auto lg:mx-10 overflow-hidden md:max-w-2xl rounded-2xl shadow-lg bg-neutral-700 m-10 hover:shadow-2xl">
                         <img className="rounded-2xl object-cover" alt="Cocktail" src={res1.drinks[0].strDrinkThumb}/>
                         <div className="p-8">
                             <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
@@ -46,7 +48,8 @@ export default async function Home() {
                     </div>
                 </Link>
                 <Link href={`/${res2.drinks[0].idDrink}`}>
-                    <div className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105 duration-300 rounded-2xl shadow-lg bg-neutral-700 m-10 hover:shadow-2xl">
+                    <div
+                        className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-105 duration-300 max-w-md mx-auto lg:mx-10 overflow-hidden md:max-w-2xl rounded-2xl shadow-lg bg-neutral-700 m-10 hover:shadow-2xl">
                         <img className="rounded-2xl object-cover" alt="Cocktail" src={res2.drinks[0].strDrinkThumb}/>
                         <div className="p-8">
                             <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
