@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default async function Home() {
 
-    const data = await fetch('http://localhost:3080/drinks', {next: {revalidate: 0}})
+    const data = await fetch('http://localhost:8080', {next: {revalidate: 0},cache: 'no-store'})
     const res = await data.json()
 
     // res.drinks[0].strDrinkThumb
