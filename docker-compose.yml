@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  api:
+    build: ./api
+    ports:
+      - "8080:8080"
+  frontend:
+    build: ./next-app
+    ports:
+      - "3000:3000"
