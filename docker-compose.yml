@@ -1,11 +1,12 @@
-version: '3.4'
-
+version: '3'
 services:
+  next-app:
+    build: ./next-app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
   api:
     build: ./api
     ports:
       - "8080:8080"
-  frontend:
-    build: ./next-app
-    ports:
-      - "3000:3000"
