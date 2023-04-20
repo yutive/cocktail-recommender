@@ -1,15 +1,17 @@
 import Link from "next/link";
 
-export default async function Home() {
-
+async function getDrinks(){
     const data = await fetch('http://localhost:8080', {next: {revalidate: 0},cache: 'no-store'})
-    const res = await data.json()
-
+    return data.json()
     // res.drinks[0].strDrinkThumb
     // res.drinks[0].strAlcoholic
     // res.drinks[0].strInstructionsDE
     // res.drinks[0].idDrink
+}
 
+export default async function Home() {
+
+    const res = await getDrinks();
 
     return (
         <main>
