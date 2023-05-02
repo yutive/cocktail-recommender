@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 async function getDrinks(){
-    const data = await fetch('http://localhost:8080', {next: {revalidate: 0},cache: 'no-store'})
+    const data = await fetch('http://api:8080', { cache: 'no-store' })
     return data.json()
     // res.drinks[0].strDrinkThumb
     // res.drinks[0].strAlcoholic
