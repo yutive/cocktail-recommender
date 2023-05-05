@@ -4,7 +4,7 @@ items:
     kind: Service
     metadata:
       annotations:
-        kompose.cmd: kompose convert -f docker-compose.yml --out k8s-kompose.yaml
+        kompose.cmd: kompose convert -f docker-compose.yaml --out k8s-kompose.yaml
         kompose.version: 1.22.0 (955b78124)
       creationTimestamp: null
       labels:
@@ -23,7 +23,7 @@ items:
     kind: Service
     metadata:
       annotations:
-        kompose.cmd: kompose convert -f docker-compose.yml --out k8s-kompose.yaml
+        kompose.cmd: kompose convert -f docker-compose.yaml --out k8s-kompose.yaml
         kompose.version: 1.22.0 (955b78124)
       creationTimestamp: null
       labels:
@@ -42,7 +42,7 @@ items:
     kind: Deployment
     metadata:
       annotations:
-        kompose.cmd: kompose convert -f docker-compose.yml --out k8s-kompose.yaml
+        kompose.cmd: kompose convert -f docker-compose.yaml --out k8s-kompose.yaml
         kompose.version: 1.22.0 (955b78124)
       creationTimestamp: null
       labels:
@@ -57,7 +57,7 @@ items:
       template:
         metadata:
           annotations:
-            kompose.cmd: kompose convert -f docker-compose.yml --out k8s-kompose.yaml
+            kompose.cmd: kompose convert -f docker-compose.yaml --out k8s-kompose.yaml
             kompose.version: 1.22.0 (955b78124)
           creationTimestamp: null
           labels:
@@ -75,7 +75,7 @@ items:
     kind: Deployment
     metadata:
       annotations:
-        kompose.cmd: kompose convert -f docker-compose.yml --out k8s-kompose.yaml
+        kompose.cmd: kompose convert -f docker-compose.yaml --out k8s-kompose.yaml
         kompose.version: 1.22.0 (955b78124)
       creationTimestamp: null
       labels:
@@ -90,7 +90,7 @@ items:
       template:
         metadata:
           annotations:
-            kompose.cmd: kompose convert -f docker-compose.yml --out k8s-kompose.yaml
+            kompose.cmd: kompose convert -f docker-compose.yaml --out k8s-kompose.yaml
             kompose.version: 1.22.0 (955b78124)
           creationTimestamp: null
           labels:
