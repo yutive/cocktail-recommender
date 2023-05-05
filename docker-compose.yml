@@ -2,11 +2,13 @@ version: '3'
 services:
   next-app:
     build: ./next-app
+    container_name: next-app
     ports:
       - "3000:3000"
     depends_on:
       - api
   api:
     build: ./api
+    container_name: api
     ports:
       - "8080:8080"
