@@ -7,8 +7,10 @@ services:
       - "3000:3000"
     depends_on:
       - api
+    image: yutive/next-app
   api:
     build: ./api
     container_name: api
     ports:
       - "8080:8080"
+    image: yutive/api
