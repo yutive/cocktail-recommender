@@ -1,38 +1,19 @@
 const fetch = require("node-fetch");
 const express = require("express");
-const mongoose = require("mongoose");
-
+const {status, send} = require("express/lib/response");
+const MongoClient = require('mongodb').MongoClient;
+const url = 'mongodb://cocktail:cocktail@localhost:27017/';
+const dbName = 'cocktail';
 const app = express();
 const port = 8080;
 
-// connection to mongodb
-mongoose.connect("mongodb://localhost/27017:27027", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-});
-
-// Modell for cocktail-IDs
-const cocktailSchema = new mongoose.Schema({
-    id: String,
-});
-const Cocktail = mongoose.model("Cocktail", cocktailSchema);
-
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}));
 
 app.get("/", async (req, res) => {
     const drink0 = await getCocktail();
     const drink1 = await getCocktail();
     const drink2 = await getCocktail();
-
-    // save Cocktail-IDs in  MongoDB
-    const cocktailIDs = [
-        new Cocktail({ id: drink0.drinks[0].idDrink }),
-        new Cocktail({ id: drink1.drinks[0].idDrink }),
-        new Cocktail({ id: drink2.drinks[0].idDrink }),
-    ];
-    await Cocktail.insertMany(cocktailIDs);
-
     const result = {
         drinks: [],
     };
@@ -46,9 +27,41 @@ app.listen(port, function (err) {
 });
 
 async function getCocktail() {
-    const response = await fetch(
-        "https://www.thecocktaildb.com/api/json/v1/1/random.php"
-    );
+    const response = await fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php");
     const data = await response.json();
+    await saveIdInHistory()
     return await data;
+}
+
+function saveIdInHistory() {
+    const client = new MongoClient(url, {useUnifiedTopology: true});
+    client.connect(function (err) {
+        if (err) {
+            console.error(err);
+            status(500).send('Failed to connect to MongoDB');
+            return;
+        }
+        console.log('Connected successfully to server');
+        const db = client.db(dbName);
+
+        // Get the collection
+        const collection = db.collection('cocktail');
+
+        // Insert the string
+        collection.insertOne({message: "lol"}, function (err, result) {
+            if (err) {
+                console.error(err);
+                res.status(500).send('Failed to insert document into collection');
+                return;
+            }
+
+            console.log(`Inserted ${result.insertedCount} document into the collection`);
+
+            // Close the client
+            client.close();
+
+            // Send a success response
+            send('String inserted successfully');
+        });
+    });
 }
