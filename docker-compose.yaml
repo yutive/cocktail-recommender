@@ -14,3 +14,14 @@ services:
     ports:
       - "8080:8080"
     image: yutive/api
+  db:
+    image: mongo:6.0.4-jammy
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: cocktail
+      MONGO_INITDB_ROOT_PASSWORD: cocktail
+      MONGO_INITDB_DATABASE: cocktail
