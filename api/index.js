@@ -18,6 +18,14 @@ app.get('/', async (req, res) => {
     result.drinks = drink0.drinks.concat(drink1.drinks).concat(drink2.drinks)
     res.json(result);
 });
+app.get('/health', async (req, res) => {
+    const data = {
+        uptime: process.uptime(),
+        message: 'Ok',
+        date: new Date()
+    }
+    res.status(200).send(data);
+});
 app.listen(port, function (err) {
     if (err) console.log(err);
     console.log(`API is running at at http://localhost:${port}`);
